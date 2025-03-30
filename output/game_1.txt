@@ -1,0 +1,6 @@
+(7, 12, N)
+(13, 13, S) SUNK
+(4, 12, S) SUNK
+(13, 1, W) SUNK
+(9, 8, N) SUNK
+(7, 7, N) SUNK
