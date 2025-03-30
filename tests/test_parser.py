@@ -42,12 +42,10 @@ def test_parse_initial_ships_valid():
         Ship(Position(5, 5), Orientation.S),
     ]
     parsed_ships = parse_initial_ships(line)
-    # Compare attrs since dataclasses instances won't be identical
     assert len(parsed_ships) == len(expected_ships)
-    for parsed, expected in zip(parsed_ships, expected_ships):
-        assert parsed.position == expected.position
-        assert parsed.orientation == expected.orientation
-        assert parsed.sunk == expected.sunk  # Default should be False
+    assert parsed_ships[0] == expected_ships[0]
+    assert parsed_ships[1] == expected_ships[1]
+    assert parsed_ships[2] == expected_ships[2]
 
 
 def test_parse_initial_ships_single():
@@ -132,9 +130,7 @@ def test_parse_input_file_valid_example():
     (0, 0) MRMLMM
     (9, 2)
     """
-    file = io.StringIO(
-        input_data.strip()
-    )  # Use strip to remove leading/trailing blank lines
+    file = io.StringIO(input_data.strip())
 
     size, initial_ships, operations = parse_input_file(file)
 

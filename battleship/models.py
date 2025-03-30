@@ -98,3 +98,12 @@ class Ship:
         return (
             f"({self.position.x}, {self.position.y}, {self.orientation.name}){status}"
         )
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Ship):
+            return False
+        return (
+            self.position == other.position
+            and self.orientation == other.orientation
+            and self.sunk == other.sunk
+        )
