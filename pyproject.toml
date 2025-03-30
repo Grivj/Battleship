@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "battleship"
+version = "0.1.0"
+description = "Toy project for a technical test"
+authors = ["Griveau Jordan <jordan@worklife.io>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
